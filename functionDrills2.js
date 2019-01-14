@@ -46,12 +46,28 @@ function decoder(message) {
 }
 console.log(decoder("craft block argon meter bells brown croon droop"));
 
+function daysInMonth(month, leapYear = 0) {
+	let days = 0
+	switch(month, leapYear) {
+		case 'February':
+			days = 28 + leapYear;
+			break;
+		case 'January':
+		case 'March':
+		case 'May':
+		case 'July':
+		case 'August':
+		case 'October':
+		case 'December':
+			days = 31 + leapYear;
+			break;
+		case 'April':
+		case 'June':
+		case 'September':
+		case 'November':
+			days = 30 + leapYear;
+	}
+	return days;
+}
 
-
-
-
-
-
-
-
-
+console.log(daysInMonth('February', true));

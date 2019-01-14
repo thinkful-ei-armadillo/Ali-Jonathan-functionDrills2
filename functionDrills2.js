@@ -21,3 +21,37 @@ beyond(33);
 beyond(0);
 beyond(Infinity);
 beyond(-1);
+
+function decode(word) {
+	if (word.charAt(0) === "a") {
+		word = word.slice(1, 2);
+	} else if (word.charAt(0) === "b") {
+		word = word.slice(2, 3);
+	} else if (word.charAt(0) === "c") {
+		word = word.slice(3, 4); 
+	} else if (word.charAt(0) === "d") {
+		word = word.slice(4, 5);
+	} else {
+		word = " ";
+	}
+	return word;
+}
+function decoder(message) {
+	let newMessage = "";
+	let encode = message.split(" ");
+	for (let i = 0; i < encode.length; i++) {
+	newMessage += decode(encode[i]);
+	}
+	return newMessage;
+}
+console.log(decoder("craft block argon meter bells brown croon droop"));
+
+
+
+
+
+
+
+
+
+

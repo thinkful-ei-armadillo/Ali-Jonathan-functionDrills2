@@ -47,8 +47,8 @@ function decoder(message) {
 console.log(decoder("craft block argon meter bells brown croon droop"));
 
 function daysInMonth(month, leapYear = 0) {
-	let days = 0;
-	switch(month, leapYear) {
+	let days = 0
+	switch(month) {
 		case 'February':
 			days = 28 + leapYear;
 			break;
@@ -59,18 +59,28 @@ function daysInMonth(month, leapYear = 0) {
 		case 'August':
 		case 'October':
 		case 'December':
-			days = 31 + leapYear;
+			days = 31;
 			break;
 		case 'April':
 		case 'June':
 		case 'September':
 		case 'November':
 			days = 30;
+			break;
+		default:
+		throw new Error("Must provide a valid month");
+			try {
+				console.log(daysInMonth('December', true));
+			} catch(err) {
+				console.log("Must provide a valid month");
+			}
+
 	}
-	return days;
+	return `${month} has ${days} days`;
 }
 
-console.log(daysInMonth('February', true));
+
+console.log(daysInMonth('December', true));
 
 function rockPaperScissors(num) {
 	const randomNo = Math.floor(Math.random() * 3) + 1;

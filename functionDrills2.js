@@ -47,7 +47,7 @@ function decoder(message) {
 console.log(decoder("craft block argon meter bells brown croon droop"));
 
 function daysInMonth(month, leapYear = 0) {
-	let days = 0
+	let days = 0;
 	switch(month, leapYear) {
 		case 'February':
 			days = 28 + leapYear;
@@ -65,9 +65,26 @@ function daysInMonth(month, leapYear = 0) {
 		case 'June':
 		case 'September':
 		case 'November':
-			days = 30 + leapYear;
+			days = 30;
 	}
 	return days;
 }
 
 console.log(daysInMonth('February', true));
+
+function rockPaperScissors(num) {
+	const randomNo = Math.floor(Math.random() * 3) + 1;
+	if (num === randomNo) {
+		console.log('Tied');
+	} else if (num === 1 && randomNo !== 2) {
+		console.log('You win!');
+	} else if (num === 2 && randomNo !== 3) {
+		console.log('You win!');
+	} else if (num === 3 && randomNo !== 1) {
+		console.log('You win!');
+	} else {
+		console.log('Computer wins!');
+	}
+}
+
+rockPaperScissors(2);
